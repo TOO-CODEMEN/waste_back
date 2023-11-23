@@ -5,7 +5,7 @@ from flask_cors import CORS
 from werkzeug.utils import secure_filename
 
 # папка для сохранения загруженных файлов
-UPLOAD_FOLDER = '/uploads'
+UPLOAD_FOLDER = '/videos'
 # расширения файлов, которые разрешено загружать
 ALLOWED_EXTENSIONS = {'mp4', 'mpeg'}
 
