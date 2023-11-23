@@ -20,6 +20,10 @@ def allowed_file(filename):
            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 class MlVideo(Resource):
+    """ Класс наследуемый от класса Resource flask_restful
+
+        post - Метод срабатывающий при post запросе url/video, обработка файла.
+    """
     def post(self):
             file = request.files['file']
             if 'file' not in request.files or file.filename == '':
