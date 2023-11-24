@@ -3,6 +3,7 @@ from flask import Flask, request
 from flask_restful import Api, Resource
 from flask_cors import CORS
 from werkzeug.utils import secure_filename
+from model.core import RoboflowRequest
 
 # папка для сохранения загруженных файлов
 UPLOAD_FOLDER = '/videos'

@@ -6,4 +6,4 @@ from pydantic import BaseSettings, SecretStr
 load_dotenv()
 
 class MlSettings(BaseSettings):
-    api_key: SecretStr = os.getenv("Robo_API")
+    api_key: SecretStr = os.getenv("ROBO_API", None)
