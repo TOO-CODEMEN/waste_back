@@ -18,7 +18,8 @@ class RoboflowRequest():
             VideoConvert.start(image)
             time.sleep(2)
             job_id, signed_url, expire_time = model.predict_video(
-                f'model/saves/new_{image}',
+                os.path.abspath('model/saves/new_' + image),
+                #f'model/saves/new_{image}',
                 fps=2,
                 prediction_type="batch-video",
             )
@@ -26,6 +27,9 @@ class RoboflowRequest():
             info = model.poll_until_video_results(job_id)
             print(info)
         else:
+            print(os.path.abspath('model/uploads/new_' + image))
+            print(f'model/uploads/{image}')
+
             model.predict(f'model/{image}', confidence=40, overlap=30).save(f'model/result_{image}')
             info = model.predict(f'model/{image}', confidence=40, overlap=30).json()
             print(info)
