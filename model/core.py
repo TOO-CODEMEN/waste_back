@@ -9,7 +9,9 @@ class RoboflowRequest():
         rf = Roboflow(api_key=api)
         project = rf.workspace().project("waste-detect-rb23i")
         model = project.version(3).model
-        return model.predict(f'model/{image}', confidence=40, overlap=30).json()
+        info = model.predict(f'model/{image}', confidence=40, overlap=30).json()
+        os.remove(f'model/{image}')
+        return info
 
 if __name__ == '__main__':
     RoboflowRequest()
