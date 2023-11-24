@@ -4,6 +4,7 @@ from flask_restful import Api, Resource
 from flask_cors import CORS
 from model.core import RoboflowRequest
 from werkzeug.utils import secure_filename
+
 basedir = os.path.abspath(os.path.dirname(__file__))
 UPLOAD_FOLDER = '/uploads'
 ALLOWED_EXTENSIONS = {'mp4', 'mpeg', 'png', 'jpg'}
