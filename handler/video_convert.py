@@ -1,7 +1,19 @@
-from moviepy.video.io import VideoFileClip
+from moviepy.editor import *
 
-def convert_video(a):
-    video = VideoFileClip('uploads/' + a)
-    video = video.cutout(90, 150)
-    # Сохранение
-    video.write_videofile("new_video/new_" + a, fps=30)
+
+class VideoConvert():
+    @staticmethod
+    def start(path):
+        video = VideoFileClip('model/uploads/' + path)
+        # video = video.cutout(0, 115)
+
+        video = video.cutout(0, 90)
+        video = video.cutout(150, 240)
+        # video = video.cutout(135, 240)
+
+        # Сохранение
+        video.write_videofile("C:\\Users\\Администратор\\PycharmProjects\\waste_back\\model\\saves\\new_" + path, fps=5)
+
+
+if __name__ == "__main__":
+    VideoConvert()
