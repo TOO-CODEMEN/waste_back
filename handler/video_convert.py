@@ -6,7 +6,9 @@ class VideoConvert():
     @staticmethod
     def start(path):
         #'model/uploads/' + path
-        video = VideoFileClip(os.path.abspath('model/uploads/') + '\\' + path)
+        print(os.path.abspath('model/uploads/') + '/' + path)
+        video = VideoFileClip(os.path.abspath('model/uploads/') + '/' + path)
+
         # video = video.cutout(0, 115)
 
         video = video.cutout(0, 90)
