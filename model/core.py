@@ -8,7 +8,6 @@ import time
 
 class RoboflowRequest():
     @staticmethod
-
     def get_info(image: str):
         api = MlSettings().api_key.get_secret_value()
         rf = Roboflow(api_key=api)
@@ -27,8 +26,8 @@ class RoboflowRequest():
             info = model.poll_until_video_results(job_id)
             print(info)
         else:
-            print(os.path.abspath('model/uploads/new_' + image))
-            print(f'model/uploads/{image}')
+            print(os.path.abspath('model/' + image))
+            print(f'model/{image}')
 
             model.predict(f'model/{image}', confidence=40, overlap=30).save(f'model/result_{image}')
             info = model.predict(f'model/{image}', confidence=40, overlap=30).json()
