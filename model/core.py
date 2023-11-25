@@ -29,10 +29,10 @@ class RoboflowRequest():
             print(os.path.abspath('model/' + image))
             print(f'model/{image}')
 
-            model.predict(f'model/{image}', confidence=40, overlap=30).save(f'model/result_{image}')
-            info = model.predict(f'model/{image}', confidence=40, overlap=30).json()
+            model.predict(f'model/uploads/{image}', confidence=40, overlap=30).save(f'model/saves/new_{image}')
+            info = model.predict(f'model/uploads/{image}', confidence=40, overlap=30).json()
             print(info)
-            os.remove(f'model/{image}')
+            os.remove(f'model/uploads/{image}')
         return info
 
 

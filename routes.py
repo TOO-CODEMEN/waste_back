@@ -12,7 +12,7 @@ ALLOWED_EXTENSIONS = {'mp4', 'mpeg', 'png', 'jpg'}
 app = Flask(__name__)
 CORS(app)
 api = Api(app)
-app.config['UPLOAD_FOLDER'] = os.path.join(basedir, 'handler/uploads')
+app.config['UPLOAD_FOLDER'] = os.path.join(basedir, '/uploads')
 
 def allowed_file(filename):
     """ Функция проверки расширения файла """
